@@ -8,8 +8,9 @@ import { SharedService } from '../services/shared.service';
 })
 export class EmployeesTableComponent implements OnInit {
 
-  employeeData:any = [];
-
+  employeeData: any = [];
+  filterData;
+  filterText;
   constructor(
     private sharedService: SharedService
   ) { }
@@ -18,12 +19,15 @@ export class EmployeesTableComponent implements OnInit {
     this.getData();
   }
 
+  // Get all employees data
   getData() {
     this.sharedService.getData().subscribe(res => {
       this.employeeData = res['data'];
+      this.filterData = res['data'];
     });
   }
 
+  // Check phone is Digits or char
   checkNumber(num) {
     // tslint:disable-next-line: use-isnan
     if (Number(num)) {

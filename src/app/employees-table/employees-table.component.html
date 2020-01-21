@@ -1,5 +1,19 @@
 <div class="container mt-5">
     <div class="row">
+        <div class="col-4">
+            <div class="input-group flex-nowrap">
+                <input type="text"
+                class="form-control"
+                [(ngModel)]="filterText"
+                placeholder="Search"
+                aria-label="Username"
+                    aria-describedby="addon-wrapping">
+            </div>
+
+            <!-- (keyup)='search($event.target.value)' -->
+        </div>
+    </div>
+    <div class="row mt-4">
         <div class="col-md">
             <table class="table table-bordered">
                 <thead>
@@ -14,7 +28,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let emp of employeeData">
+                    <tr *ngFor="let emp of filterData | filter: filterText">
                         <th> {{emp.id}} </th>
                         <td> {{emp.name}} </td>
                         <td> {{checkNumber(emp.phone)}} </td>
