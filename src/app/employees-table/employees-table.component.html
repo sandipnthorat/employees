@@ -1,0 +1,30 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md">
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="bg-info text-white">
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">City</th>
+                        <th scope="col">Address1</th>
+                        <th scope="col">Address2</th>
+                        <th scope="col">Postal Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let emp of employeeData">
+                        <th> {{emp.id}} </th>
+                        <td> {{emp.name}} </td>
+                        <td> {{checkNumber(emp.phone)}} </td>
+                        <td> {{emp.address.city}} </td>
+                        <td> {{emp.address.address_line1}} </td>
+                        <td> {{emp.address.address_line2}} </td>
+                        <td> {{emp.address.postal_code}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
