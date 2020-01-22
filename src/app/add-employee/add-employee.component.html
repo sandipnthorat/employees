@@ -61,7 +61,7 @@
                                 <button class="btn btn-sm btn-outline-info" [routerLink]="['/']" routerLinkActive="router-link-active" >Back</button>
                             </div>
                             <div class="col-3 text-right">
-                                    <button class="btn btn-sm btn-outline-info">Add employee</button>
+                                    <button [disabled]="!employeeForm.valid" class="btn btn-sm btn-outline-info">Add employee</button>
                             </div>
                         </div>
                     </form>

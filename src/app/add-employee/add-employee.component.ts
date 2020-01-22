@@ -25,10 +25,10 @@ export class AddEmployeeComponent implements OnInit {
       id: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       name: ['', [Validators.required, Validators.minLength(4)]],
       phone: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
-      city: ['', Validators.required],
-      address_line1: ['', Validators.required],
-      address_line2: ['', Validators.required],
-      postal_code: ['', Validators.required],
+      city: [''],
+      address_line1: [''],
+      address_line2: [''],
+      postal_code: [''],
     });
 
     this.sharedService.getData().subscribe(res => {
