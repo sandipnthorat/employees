@@ -12,8 +12,9 @@ const routes: Routes = [
     path: 'employees',
     component: EmployeeComponent,
     children: [
+      { path: '', redirectTo: 'employees-table', pathMatch: 'full' },
       { path: 'employees-table', component: EmployeesTableComponent },
-      { path: 'edit', component: EditEmployeeComponent },
+      { path: 'edit/:id', component: EditEmployeeComponent },
       { path: 'add', component: AddEmployeeComponent },
     ]
   },

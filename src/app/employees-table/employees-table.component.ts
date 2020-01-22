@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../services/shared.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'employees-table',
@@ -12,7 +13,8 @@ export class EmployeesTableComponent implements OnInit {
   filterData;
   filterText;
   constructor(
-    private sharedService: SharedService
+    private sharedService: SharedService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -22,9 +24,9 @@ export class EmployeesTableComponent implements OnInit {
   // Get all employees data
   getData() {
     this.sharedService.getData().subscribe(res => {
-      this.employeeData = res['data'];
-      this.filterData = res['data'];
-    });
+      this.employeeData = res;
+      this.filterData = res;
+    })
   }
 
   // Check phone is Digits or char
